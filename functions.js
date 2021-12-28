@@ -10,7 +10,14 @@ const books = require("./books.json");
  ****************************************************************/
 function getBookById(bookId, books) {
   // Your code goes here
+  return books.find((book) => book.id == bookId);
+
+  // return
+  // book;
+  // else
+  // return undefined;
 }
+
 // console.log(getBookById(12, books));
 
 /**************************************************************
@@ -22,6 +29,9 @@ function getBookById(bookId, books) {
  ****************************************************************/
 function getAuthorByName(authorName, authors) {
   // Your code goes here
+  return authors.find(
+    (author) => author.name.toLowerCase() === authorName.toLowerCase()
+  );
 }
 // console.log(getAuthorByName("J.K. Rowling", authors));
 
@@ -33,8 +43,13 @@ function getAuthorByName(authorName, authors) {
  ****************************************************************/
 function bookCountsByAuthor(authors) {
   // Your code goes here
+
+  return authors.map((author) => ({
+    name: author.name,
+    bookCount: author.books.length,
+  }));
 }
-// console.log(bookCountsByAuthor(authors));
+console.log("1mjhgkhklhlkjk,j,kkk", bookCountsByAuthor(authors));
 
 /**************************************************************
  * booksByColor(books):
@@ -44,13 +59,13 @@ function bookCountsByAuthor(authors) {
  *    { <COLOR>: [<BOOK_TITLES>] }
  ****************************************************************/
 function booksByColor(books) {
-  const colors = {};
+  const colors = { bookscolor };
 
   // Your code goes here
 
   return colors;
 }
-// console.log(booksByColor(books));
+//console.log(booksByColor(books));
 
 /**************************************************************
  * titlesByAuthorName(authorName, authors, books):
@@ -62,6 +77,7 @@ function booksByColor(books) {
  ****************************************************************/
 function titlesByAuthorName(authorName, authors, books) {
   // Your code goes here
+  return books.filter((book) => book.title.some);
 }
 // console.log(titlesByAuthorName("George R.R. Martin", authors, books));
 

@@ -9,9 +9,10 @@
     "jest": "^26.6.3"
   },
   "scripts": {
-    "test": "CI=true jest"
+    "test": "jest"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.12.11"
+    "@babel/preset-env": "^7.12.11",
+    "monaco-editor": "^0.31.1"
   }
 }
